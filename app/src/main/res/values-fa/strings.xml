@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Simple Note</string>
+    <string name="newNote">یادداشت جدید</string>
+    <string name="savedNotes">ذخیره شده ها</string>
+    <string name="search">جستجو</string>
+    <string name="createNewNote">ایجاد یادداشت جدید</string>
+    <string name="saveNewNote">ذخیره</string>
+    <string name="addNewNoteTitle">عنوان</string>
+    <string name="addNewNoteBody">یادداشت…</string>
+    <string name="more_action">گزینه های بیشتر</string>
+    <string name="deleteByBatch">حذف چند گزینه</string>
+    <string name="deleteAll">حذف همه</string>
+    <string name="thereIsNoCreatedNotes">هیچ یادداشتی ایجاد نشده است</string>
+    <string name="editNoteFragmentTitle">ویرایش یادداشت</string>
+    <string name="noteUpdated">یادداشت ذخیره شده</string>
+    <string name="undo">برگشت</string>
+    <string name="language">fa</string>
+    <string name="country">ir</string>
+</resources>

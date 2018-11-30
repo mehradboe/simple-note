@@ -1,0 +1,29 @@
+package com.github.masterjey.simplenote.database
+
+import android.arch.persistence.room.Database
+import android.arch.persistence.room.Room
+import android.arch.persistence.room.RoomDatabase
+import android.content.Context
+import com.github.masterjey.simplenote.database.dao.NoteDao
+import com.github.masterjey.simplenote.entity.Note
+
+@Database(entities = [Note::class], version = 1, exportSchema = false)
+abstract class AppDatabase : RoomDatabase() {
+
+    abstract fun noteDao(): NoteDao
+
+    companion object {
+
+        private var instance: AppDatabase? = null
+
+        fun with(context: Context): AppDatabase {
+            if (instance == null) {
+                instance = Room.databaseBuilder(context, AppDatabase::class.java, "db")
+                    .build()
+            }
+            return instance as AppDatabase
+        }
+
+    }
+
+}

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="buttonCornerRadius">8dp</dimen>
+    <dimen name="cardViewCornerRadius">8dp</dimen>
+    <dimen name="cardViewElevation">5dp</dimen>
+</resources>

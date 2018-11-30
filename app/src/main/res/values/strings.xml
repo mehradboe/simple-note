@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Simple Note</string>
+    <string name="newNote">New Note</string>
+    <string name="savedNotes">Saved Notes</string>
+    <string name="search">Search</string>
+    <string name="createNewNote">Create new note</string>
+    <string name="saveNewNote">SAVE</string>
+    <string name="addNewNoteTitle">Title</string>
+    <string name="addNewNoteBody">Note…</string>
+    <string name="more_action">More Action</string>
+    <string name="deleteByBatch">Delete By Batch</string>
+    <string name="deleteAll">Delete All</string>
+    <string name="thereIsNoCreatedNotes">There is no created notes</string>
+    <string name="editNoteFragmentTitle">Edit note</string>
+    <string name="noteUpdated">Note updated</string>
+    <string name="undo">UNDO</string>
+    <string name="language">en</string>
+    <string name="country">us</string>
+</resources>
