@@ -1,14 +1,19 @@
 package com.github.masterjey.simplenote.view.fragment
 
+import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.os.Handler
 import android.support.design.widget.Snackbar
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.TextView
 import butterknife.BindView
+import butterknife.ButterKnife
 import com.github.masterjey.simplenote.R
+import com.github.masterjey.simplenote.databinding.FragmentAddNewNoteBinding
 import com.github.masterjey.simplenote.entity.Note
-import com.github.masterjey.simplenote.model.EditNoteViewModel
+import com.github.masterjey.simplenote.viewmodel.EditNoteViewModel
 import kotlinx.android.synthetic.main.fragment_add_new_note.*
 import java.util.*
 
@@ -21,8 +26,17 @@ class EditNoteFragment : AddNewNoteFragment() {
     @BindView(R.id.addNewNoteToolbar)
     lateinit var fragmentTitle: TextView
 
+    lateinit var dataBinding: FragmentAddNewNoteBinding
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        dataBinding =
+                DataBindingUtil.inflate(inflater, R.layout.fragment_add_new_note, container, false)
+
+        return dataBinding.root
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+        ButterKnife.bind(this, view)
 
         viewModel = EditNoteViewModel(activity!!.application)
         if (arguments != null) {
@@ -33,8 +47,7 @@ class EditNoteFragment : AddNewNoteFragment() {
 
     private fun initViews() {
         fragmentTitle.text = getString(R.string.editNoteFragmentTitle)
-        inputTitle.setText(note.title)
-        inputContent.setText(note.content)
+        dataBinding.note = note
     }
 
     override fun saveNoteOnClick() {
@@ -48,9 +61,9 @@ class EditNoteFragment : AddNewNoteFragment() {
         val saveButtonVisibility = addNewNoteSave.visibility == View.VISIBLE
 
         if (canSave and !saveButtonVisibility)
-            animateView.fadeIn()
+            saveNote.show()
         else if (!canSave and saveButtonVisibility)
-            animateView.fadeOut()
+            saveNote.hide()
     }
 
     private fun showSnackBar() {
@@ -59,7 +72,9 @@ class EditNoteFragment : AddNewNoteFragment() {
             snackBar.dismiss()
             saveOldNote()
         }.show()
-        popFragment()
+        Handler().postDelayed({
+            getFragNavController().popFragment()
+        }, 300)
     }
 
     override fun wrapNote(): Note {
@@ -74,12 +89,6 @@ class EditNoteFragment : AddNewNoteFragment() {
 
     private fun saveOldNote() {
         viewModel.saveNote(note)
-    }
-
-    private fun popFragment() {
-        Handler().postDelayed({
-            getFragNavController().popFragment()
-        }, 300)
     }
 
 }

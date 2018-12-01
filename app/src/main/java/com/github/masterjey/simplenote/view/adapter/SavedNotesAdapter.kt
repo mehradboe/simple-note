@@ -2,8 +2,9 @@ package com.github.masterjey.simplenote.view.adapter
 
 import android.content.Context
 import android.os.Build
-import android.support.constraint.ConstraintLayout
+import android.os.Handler
 import android.support.v7.util.DiffUtil
+import android.support.v7.widget.CardView
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -15,6 +16,7 @@ import com.github.masterjey.simplenote.R
 import com.github.masterjey.simplenote.entity.Note
 import com.github.masterjey.simplenote.utils.convertToDate
 import java.util.*
+
 
 class SavedNotesAdapter(private val context: Context) :
     RecyclerView.Adapter<SavedNotesAdapter.SavedNotesViewHolder>() {
@@ -54,7 +56,7 @@ class SavedNotesAdapter(private val context: Context) :
         View.OnClickListener {
 
         @BindView(R.id.savedNotesItemRootLayout)
-        lateinit var rootLayout: ConstraintLayout
+        lateinit var rootLayout: CardView
         @BindView(R.id.savedNotesTitleNote)
         lateinit var titleTextView: TextView
         @BindView(R.id.savedNotesContentNote)
@@ -82,7 +84,10 @@ class SavedNotesAdapter(private val context: Context) :
             when (v!!.id) {
                 R.id.savedNotesItemRootLayout -> {
                     if (onSavedNoteClickListener != null) {
-                        onSavedNoteClickListener!!.onClick(list[adapterPosition])
+                        Handler().postDelayed({
+                            onSavedNoteClickListener!!.onClick(list[adapterPosition])
+                        }
+                            , 500)
                     }
                 }
             }
