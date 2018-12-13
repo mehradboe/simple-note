@@ -16,6 +16,8 @@ import com.ncapdevi.fragnav.tabhistory.UniqueTabHistoryStrategy
 import io.github.inflationx.viewpump.ViewPumpContextWrapper
 
 class MainActivity : AppCompatActivity(), FragNavController.RootFragmentListener, BaseFragment.FragmentNavigation {
+    
+    // MainActivity
 
     private val savedNotesTab = FragNavController.TAB1
 
