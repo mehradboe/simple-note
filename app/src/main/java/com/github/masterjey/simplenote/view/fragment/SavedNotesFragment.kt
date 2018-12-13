@@ -4,6 +4,7 @@ import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.os.Handler
+import android.support.design.widget.AppBarLayout
 import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -19,8 +20,8 @@ import butterknife.OnClick
 import butterknife.OnTextChanged
 import com.github.masterjey.simplenote.R
 import com.github.masterjey.simplenote.entity.Note
-import com.github.masterjey.simplenote.model.SavedNoteViewModel
 import com.github.masterjey.simplenote.view.adapter.SavedNotesAdapter
+import com.github.masterjey.simplenote.viewmodel.SavedNoteViewModel
 import kotlinx.android.synthetic.main.fragment_saved_notes.*
 
 class SavedNotesFragment : BaseFragment(), PopupMenu.OnMenuItemClickListener,
@@ -32,6 +33,8 @@ class SavedNotesFragment : BaseFragment(), PopupMenu.OnMenuItemClickListener,
 
     private val searchHandler = Handler()
 
+    @BindView(R.id.savedNotesAppBarLayout)
+    lateinit var appBarLayout: AppBarLayout
     @BindView(R.id.savedNotesMoreAction)
     lateinit var moreAction: ImageView
     @BindView(R.id.savedNotesRecyclerView)
@@ -101,6 +104,11 @@ class SavedNotesFragment : BaseFragment(), PopupMenu.OnMenuItemClickListener,
         popupMenu.inflate(R.menu.saved_notes_more_action)
         popupMenu.setOnMenuItemClickListener(this)
         popupMenu.show()
+    }
+
+    @OnClick(R.id.savedNotesAddNewNote)
+    fun addNewNoteOnClick() {
+        pushFragment(AddNewNoteFragment())
     }
 
     fun editNote(note: Note) {

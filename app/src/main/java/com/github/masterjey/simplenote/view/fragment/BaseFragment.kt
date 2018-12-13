@@ -21,6 +21,10 @@ open class BaseFragment : Fragment() {
         fragNavController.pushFragment(fragment)
     }
 
+    fun popFragment(){
+        fragNavController.popFragment()
+    }
+
     fun getFragNavController(): FragNavController {
         return fragmentNavigation.getFragNavController()
     }

@@ -2,6 +2,7 @@ package com.github.masterjey.simplenote.view.fragment
 
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
+import android.support.design.widget.FloatingActionButton
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,20 +13,20 @@ import butterknife.OnClick
 import butterknife.OnTextChanged
 import com.github.masterjey.simplenote.R
 import com.github.masterjey.simplenote.entity.Note
-import com.github.masterjey.simplenote.model.AddNoteViewModel
-import com.github.masterjey.simplenote.utils.AnimateView
+import com.github.masterjey.simplenote.viewmodel.AddNoteViewModel
 import kotlinx.android.synthetic.main.fragment_add_new_note.*
 import java.util.*
 
 open class AddNewNoteFragment : BaseFragment() {
 
     private lateinit var viewModel: AddNoteViewModel
-    open lateinit var animateView: AnimateView
 
     @BindView(R.id.addNewNoteTitle)
     lateinit var inputTitle: EditText
     @BindView(R.id.addNewNoteContent)
     lateinit var inputContent: EditText
+    @BindView(R.id.addNewNoteSave)
+    lateinit var saveNote: FloatingActionButton
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -43,9 +44,6 @@ open class AddNewNoteFragment : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         viewModel = ViewModelProviders.of(this).get(AddNoteViewModel::class.java)
-        animateView = AnimateView(context!!)
-            .duration(400)
-            .view(addNewNoteSave)
 
     }
 
@@ -55,15 +53,15 @@ open class AddNewNoteFragment : BaseFragment() {
         val visible = addNewNoteSave.visibility == View.VISIBLE
 
         if (!visible and isNotBlank)
-            animateView.fadeIn()
+            saveNote.show()
         else if (visible and !isNotBlank)
-            animateView.fadeOut()
+            saveNote.hide()
     }
 
     @OnClick(R.id.addNewNoteSave)
     open fun saveNoteOnClick() {
         viewModel.addNewNote(wrapNote())
-
+        popFragment()
         resetInputs()
     }
 

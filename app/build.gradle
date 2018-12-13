@@ -8,7 +8,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.github.masterjey.simplenote"
-        minSdkVersion 17
+        minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -21,16 +21,22 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation "com.android.support:appcompat-v7:${SUPPORT_LIBRARY_VERSION}"
-    implementation "com.android.support:recyclerview-v7:${SUPPORT_LIBRARY_VERSION}"
-    implementation "com.android.support:cardview-v7:${SUPPORT_LIBRARY_VERSION}"
-//    implementation "com.android.support:support-v13:${SUPPORT_LIBRARY_VERSION}"
-    implementation "com.android.support:design:${SUPPORT_LIBRARY_VERSION}"
+    implementation "com.android.support:appcompat-v7:$support_library_version"
+    implementation "com.android.support:recyclerview-v7:$support_library_version"
+    implementation "com.android.support:cardview-v7:$support_library_version"
+    implementation "com.android.support:design:$support_library_version"
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+
+    // Calligraphy
+    implementation 'io.github.inflationx:calligraphy3:3.0.0'
+    implementation 'io.github.inflationx:viewpump:1.0.0'
 
     // Life Cycle Extensions
     implementation 'android.arch.lifecycle:extensions:1.1.1'
@@ -50,12 +56,7 @@ dependencies {
     kapt "android.arch.persistence.room:compiler:1.1.1"
 
     // Fragment Navigation Controller
-    implementation 'com.ncapdevi:frag-nav:3.0.0-RC'
-
-    // Bottom Bar
-    implementation('com.aurelhubert:ahbottomnavigation:2.1.0') {
-        exclude group: "com.android.support"
-    }
+    implementation 'com.ncapdevi:frag-nav:3.0.0'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'

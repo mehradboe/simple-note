@@ -1,4 +1,4 @@
-package com.github.masterjey.simplenote.model
+package com.github.masterjey.simplenote.viewmodel
 
 import android.app.Application
 import android.arch.lifecycle.AndroidViewModel
