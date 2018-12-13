@@ -5,8 +5,6 @@ import android.os.Bundle
 import android.os.PersistableBundle
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
-import android.view.View
-import android.view.WindowManager
 import butterknife.ButterKnife
 import com.github.masterjey.simplenote.R
 import com.github.masterjey.simplenote.view.fragment.BaseFragment
@@ -45,9 +43,10 @@ class MainActivity : AppCompatActivity(), FragNavController.RootFragmentListener
         fragNavController.navigationStrategy =
                 UniqueTabHistoryStrategy(object : FragNavSwitchController {
                     override fun switchTab(
-                        index: Int,
-                        transactionOptions: FragNavTransactionOptions?
-                    ) {}
+                            index: Int,
+                            transactionOptions: FragNavTransactionOptions?
+                    ) {
+                    }
                 })
         fragNavController.initialize(savedNotesTab, savedInstanceState)
         fragNavController.executePendingTransactions()

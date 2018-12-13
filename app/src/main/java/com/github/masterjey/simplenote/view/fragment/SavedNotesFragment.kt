@@ -20,7 +20,6 @@ import butterknife.OnClick
 import butterknife.OnTextChanged
 import com.github.masterjey.simplenote.R
 import com.github.masterjey.simplenote.entity.Note
-import com.github.masterjey.simplenote.utils.Animator
 import com.github.masterjey.simplenote.view.adapter.SavedNotesAdapter
 import com.github.masterjey.simplenote.viewmodel.SavedNoteViewModel
 import kotlinx.android.synthetic.main.fragment_saved_notes.*
