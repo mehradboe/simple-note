@@ -3,8 +3,8 @@ package com.github.masterjey.simplenote.view.activity
 import android.content.Context
 import android.os.Bundle
 import android.os.PersistableBundle
-import android.support.v4.app.Fragment
-import android.support.v7.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.appcompat.app.AppCompatActivity
 import butterknife.ButterKnife
 import com.github.masterjey.simplenote.R
 import com.github.masterjey.simplenote.view.fragment.BaseFragment
@@ -66,7 +66,7 @@ class MainActivity : AppCompatActivity(), FragNavController.RootFragmentListener
     override val numberOfRootFragments: Int
         get() = 1
 
-    override fun getRootFragment(index: Int): Fragment {
+    override fun getRootFragment(index: Int): androidx.fragment.app.Fragment {
         when (index) {
             savedNotesTab -> return savedNotesFragment
         }

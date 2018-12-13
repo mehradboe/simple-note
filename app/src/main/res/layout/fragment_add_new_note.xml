@@ -7,12 +7,12 @@
         <variable name="note" type="com.github.masterjey.simplenote.entity.Note"/>
     </data>
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#fff">
 
-        <android.support.design.widget.AppBarLayout
+        <com.google.android.material.appbar.AppBarLayout
                 android:id="@+id/addNewNotesAppBarLayout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -21,13 +21,13 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-            <android.support.v7.widget.Toolbar
+            <androidx.appcompat.widget.Toolbar
                     android:layout_width="match_parent"
                     app:contentInsetLeft="0dp"
                     app:contentInsetStart="0dp"
                     android:layout_height="?android:attr/actionBarSize">
 
-                <android.support.constraint.ConstraintLayout
+                <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
@@ -45,11 +45,11 @@
                             app:layout_constraintEnd_toEndOf="parent" android:layout_marginBottom="16dp"
                             app:layout_constraintBottom_toBottomOf="parent"/>
 
-                </android.support.constraint.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
-            </android.support.v7.widget.Toolbar>
+            </androidx.appcompat.widget.Toolbar>
 
-        </android.support.design.widget.AppBarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
 
         <EditText
                 android:id="@+id/addNewNoteTitle"
@@ -85,7 +85,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/addNewNoteTitle"
                 tools:ignore="Autofill,LabelFor"/>
 
-        <android.support.design.widget.FloatingActionButton
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/addNewNoteSave"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -97,6 +97,6 @@
                 android:layout_marginEnd="16dp" app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginBottom="16dp" app:layout_constraintBottom_toBottomOf="parent"/>
 
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

@@ -1,13 +1,13 @@
 package com.github.masterjey.simplenote.view.fragment
 
-import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModelProviders
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.os.Handler
-import android.support.design.widget.AppBarLayout
-import android.support.v7.widget.DefaultItemAnimator
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import com.google.android.material.appbar.AppBarLayout
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
@@ -38,7 +38,7 @@ class SavedNotesFragment : BaseFragment(), PopupMenu.OnMenuItemClickListener,
     @BindView(R.id.savedNotesMoreAction)
     lateinit var moreAction: ImageView
     @BindView(R.id.savedNotesRecyclerView)
-    lateinit var recyclerView: RecyclerView
+    lateinit var recyclerView: androidx.recyclerview.widget.RecyclerView
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -69,8 +69,8 @@ class SavedNotesFragment : BaseFragment(), PopupMenu.OnMenuItemClickListener,
             }
         })
         recyclerView.adapter = adapter
-        recyclerView.layoutManager = LinearLayoutManager(context)
-        recyclerView.itemAnimator = DefaultItemAnimator()
+        recyclerView.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(context)
+        recyclerView.itemAnimator = androidx.recyclerview.widget.DefaultItemAnimator()
     }
 
     override fun onChanged(notes: MutableList<Note>?) {

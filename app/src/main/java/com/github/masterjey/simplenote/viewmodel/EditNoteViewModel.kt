@@ -1,7 +1,7 @@
 package com.github.masterjey.simplenote.viewmodel
 
 import android.app.Application
-import android.arch.lifecycle.AndroidViewModel
+import androidx.lifecycle.AndroidViewModel
 import com.github.masterjey.simplenote.database.AppDatabase
 import com.github.masterjey.simplenote.entity.Note
 import java.util.concurrent.Executors

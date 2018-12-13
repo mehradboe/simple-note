@@ -1,7 +1,7 @@
 package com.github.masterjey.simplenote.database.dao
 
-import android.arch.lifecycle.LiveData
-import android.arch.persistence.room.*
+import androidx.lifecycle.LiveData
+import androidx.room.*
 import com.github.masterjey.simplenote.entity.Note
 
 @Dao
