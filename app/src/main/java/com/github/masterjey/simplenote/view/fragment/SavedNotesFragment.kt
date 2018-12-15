@@ -1,32 +1,29 @@
 package com.github.masterjey.simplenote.view.fragment
 
-import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.os.Handler
-import android.support.design.widget.AppBarLayout
-import android.support.v7.widget.DefaultItemAnimator
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.PopupMenu
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import butterknife.BindView
 import butterknife.ButterKnife
 import butterknife.OnClick
 import butterknife.OnTextChanged
 import com.github.masterjey.simplenote.R
 import com.github.masterjey.simplenote.entity.Note
-import com.github.masterjey.simplenote.utils.Animator
 import com.github.masterjey.simplenote.view.adapter.SavedNotesAdapter
 import com.github.masterjey.simplenote.viewmodel.SavedNoteViewModel
 import kotlinx.android.synthetic.main.fragment_saved_notes.*
 
-class SavedNotesFragment : BaseFragment(), PopupMenu.OnMenuItemClickListener,
-    Observer<MutableList<Note>> {
+class SavedNotesFragment : BaseFragment(), PopupMenu.OnMenuItemClickListener, Observer<MutableList<Note>> {
 
     private lateinit var viewModel: SavedNoteViewModel
     private lateinit var adapter: SavedNotesAdapter
@@ -34,17 +31,15 @@ class SavedNotesFragment : BaseFragment(), PopupMenu.OnMenuItemClickListener,
 
     private val searchHandler = Handler()
 
-    @BindView(R.id.savedNotesAppBarLayout)
-    lateinit var appBarLayout: AppBarLayout
     @BindView(R.id.savedNotesMoreAction)
     lateinit var moreAction: ImageView
     @BindView(R.id.savedNotesRecyclerView)
     lateinit var recyclerView: RecyclerView
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater,
+            container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_saved_notes, container, false)
 
@@ -127,8 +122,8 @@ class SavedNotesFragment : BaseFragment(), PopupMenu.OnMenuItemClickListener,
 
         for (item in notesList) {
             if (item.title.toLowerCase().contains(lowerCaseText) || item.content.toLowerCase().contains(
-                    lowerCaseText
-                )
+                            lowerCaseText
+                    )
             )
                 filteredList.add(item)
         }

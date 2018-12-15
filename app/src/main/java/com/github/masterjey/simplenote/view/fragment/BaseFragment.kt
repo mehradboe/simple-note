@@ -1,7 +1,7 @@
 package com.github.masterjey.simplenote.view.fragment
 
 import android.content.Context
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import com.ncapdevi.fragnav.FragNavController
 
 open class BaseFragment : Fragment() {
@@ -9,7 +9,7 @@ open class BaseFragment : Fragment() {
     private lateinit var fragmentNavigation: FragmentNavigation
     private lateinit var fragNavController: FragNavController
 
-    override fun onAttach(context: Context?) {
+    override fun onAttach(context: Context) {
         super.onAttach(context)
         if (context is FragmentNavigation) {
             fragmentNavigation = context
@@ -21,7 +21,7 @@ open class BaseFragment : Fragment() {
         fragNavController.pushFragment(fragment)
     }
 
-    fun popFragment(){
+    fun popFragment() {
         fragNavController.popFragment()
     }
 
