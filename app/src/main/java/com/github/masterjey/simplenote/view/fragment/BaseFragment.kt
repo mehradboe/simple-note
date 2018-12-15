@@ -9,7 +9,7 @@ open class BaseFragment : androidx.fragment.app.Fragment() {
     private lateinit var fragmentNavigation: FragmentNavigation
     private lateinit var fragNavController: FragNavController
 
-    override fun onAttach(context: Context?) {
+    override fun onAttach(context: Context) {
         super.onAttach(context)
         if (context is FragmentNavigation) {
             fragmentNavigation = context
@@ -21,7 +21,7 @@ open class BaseFragment : androidx.fragment.app.Fragment() {
         fragNavController.pushFragment(fragment)
     }
 
-    fun popFragment(){
+    fun popFragment() {
         fragNavController.popFragment()
     }
 

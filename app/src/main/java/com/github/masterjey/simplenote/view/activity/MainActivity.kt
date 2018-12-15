@@ -3,6 +3,8 @@ package com.github.masterjey.simplenote.view.activity
 import android.content.Context
 import android.os.Bundle
 import android.os.PersistableBundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.Fragment
 import androidx.appcompat.app.AppCompatActivity
 import butterknife.ButterKnife
@@ -45,6 +47,8 @@ class MainActivity : AppCompatActivity(), FragNavController.RootFragmentListener
         fragNavController.navigationStrategy =
                 UniqueTabHistoryStrategy(object : FragNavSwitchController {
                     override fun switchTab(
+                        index: Int,
+                        transactionOptions: FragNavTransactionOptions?
                             index: Int,
                             transactionOptions: FragNavTransactionOptions?
                     ) {

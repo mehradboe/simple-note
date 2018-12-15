@@ -1,5 +1,7 @@
 package com.github.masterjey.simplenote.view.fragment
 
+import android.os.Bundle
+import android.os.Handler
 import androidx.databinding.DataBindingUtil
 import android.os.Bundle
 import android.os.Handler
@@ -8,12 +10,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.databinding.DataBindingUtil
 import butterknife.BindView
 import butterknife.ButterKnife
 import com.github.masterjey.simplenote.R
 import com.github.masterjey.simplenote.databinding.FragmentAddNewNoteBinding
 import com.github.masterjey.simplenote.entity.Note
 import com.github.masterjey.simplenote.viewmodel.EditNoteViewModel
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_add_new_note.*
 import java.util.*
 
