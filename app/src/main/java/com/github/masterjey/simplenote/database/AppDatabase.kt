@@ -1,8 +1,5 @@
 package com.github.masterjey.simplenote.database
 
-import androidx.room.Database
-import androidx.room.Room
-import androidx.room.RoomDatabase
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
@@ -22,7 +19,7 @@ abstract class AppDatabase : RoomDatabase() {
         fun with(context: Context): AppDatabase {
             if (instance == null) {
                 instance = Room.databaseBuilder(context, AppDatabase::class.java, "db")
-                    .build()
+                        .build()
             }
             return instance as AppDatabase
         }

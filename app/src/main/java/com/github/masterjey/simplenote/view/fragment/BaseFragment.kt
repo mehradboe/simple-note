@@ -1,7 +1,6 @@
 package com.github.masterjey.simplenote.view.fragment
 
 import android.content.Context
-import androidx.fragment.app.Fragment
 import com.ncapdevi.fragnav.FragNavController
 
 open class BaseFragment : androidx.fragment.app.Fragment() {
