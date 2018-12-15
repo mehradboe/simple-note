@@ -43,6 +43,7 @@ class SavedNotesFragment : BaseFragment(), PopupMenu.OnMenuItemClickListener, Ob
     ): View? {
         val view = inflater.inflate(R.layout.fragment_saved_notes, container, false)
 
+
         ButterKnife.bind(this, view)
 
         return view
