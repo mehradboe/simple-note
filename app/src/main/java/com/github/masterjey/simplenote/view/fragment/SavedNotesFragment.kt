@@ -2,14 +2,6 @@ package com.github.masterjey.simplenote.view.fragment
 
 import android.os.Bundle
 import android.os.Handler
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
-import android.os.Bundle
-import android.os.Handler
-import com.google.android.material.appbar.AppBarLayout
-import androidx.recyclerview.widget.DefaultItemAnimator
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
@@ -18,9 +10,6 @@ import android.widget.ImageView
 import android.widget.PopupMenu
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import androidx.recyclerview.widget.DefaultItemAnimator
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import butterknife.BindView
 import butterknife.ButterKnife
 import butterknife.OnClick

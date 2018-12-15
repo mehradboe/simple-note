@@ -10,7 +10,6 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.DiffUtil
 import butterknife.BindView
 import butterknife.ButterKnife
 import com.github.masterjey.simplenote.R
@@ -20,7 +19,7 @@ import java.util.*
 
 
 class SavedNotesAdapter(private val context: Context) :
-    androidx.recyclerview.widget.RecyclerView.Adapter<SavedNotesAdapter.SavedNotesViewHolder>() {
+        RecyclerView.Adapter<SavedNotesAdapter.SavedNotesViewHolder>() {
 
     private var onSavedNoteClickListener: OnSavedNoteClickListener? = null
 
@@ -28,7 +27,7 @@ class SavedNotesAdapter(private val context: Context) :
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): SavedNotesViewHolder {
         return SavedNotesViewHolder(
-            LayoutInflater.from(context).inflate(R.layout.list_saved_notes_item, viewGroup, false)
+                LayoutInflater.from(context).inflate(R.layout.list_saved_notes_item, viewGroup, false)
         )
     }
 
@@ -53,11 +52,11 @@ class SavedNotesAdapter(private val context: Context) :
         this.onSavedNoteClickListener = onSavedNoteClickListener
     }
 
-    inner class SavedNotesViewHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView),
-        View.OnClickListener {
+    inner class SavedNotesViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),
+            View.OnClickListener {
 
         @BindView(R.id.savedNotesItemRootLayout)
-        lateinit var rootLayout: androidx.cardview.widget.CardView
+        lateinit var rootLayout: CardView
         @BindView(R.id.savedNotesTitleNote)
         lateinit var titleTextView: TextView
         @BindView(R.id.savedNotesContentNote)
@@ -88,7 +87,7 @@ class SavedNotesAdapter(private val context: Context) :
                         Handler().postDelayed({
                             onSavedNoteClickListener!!.onClick(list[adapterPosition])
                         }
-                            , 500)
+                                , 500)
                     }
                 }
             }
@@ -97,10 +96,10 @@ class SavedNotesAdapter(private val context: Context) :
     }
 
     inner class NoteDiffCallBack(
-        private val oldNotes: List<Note>,
-        private val newNotes: List<Note>
+            private val oldNotes: List<Note>,
+            private val newNotes: List<Note>
     ) :
-        DiffUtil.Callback() {
+            DiffUtil.Callback() {
 
         override fun getOldListSize(): Int = oldNotes.size
 

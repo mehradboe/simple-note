@@ -12,16 +12,16 @@ class AppBase : Application() {
         super.onCreate()
 
         ViewPump.init(
-            ViewPump.builder()
-                .addInterceptor(
-                    CalligraphyInterceptor(
-                        CalligraphyConfig.Builder()
-                            .setDefaultFontPath("fonts/samim.ttf")
-                            .setFontAttrId(R.attr.fontPath)
-                            .build()
-                    )
-                )
-                .build()
+                ViewPump.builder()
+                        .addInterceptor(
+                                CalligraphyInterceptor(
+                                        CalligraphyConfig.Builder()
+                                                .setDefaultFontPath("fonts/samim.ttf")
+                                                .setFontAttrId(R.attr.fontPath)
+                                                .build()
+                                )
+                        )
+                        .build()
         )
 
     }

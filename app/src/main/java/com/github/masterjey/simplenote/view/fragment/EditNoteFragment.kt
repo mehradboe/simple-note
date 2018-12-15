@@ -2,10 +2,6 @@ package com.github.masterjey.simplenote.view.fragment
 
 import android.os.Bundle
 import android.os.Handler
-import androidx.databinding.DataBindingUtil
-import android.os.Bundle
-import android.os.Handler
-import com.google.android.material.snackbar.Snackbar
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
