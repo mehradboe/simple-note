@@ -1,6 +1,9 @@
 package com.github.masterjey.simplenote.view.fragment
 
 import android.os.Bundle
+import androidx.lifecycle.ViewModelProviders
+import android.os.Bundle
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup

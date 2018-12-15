@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.Fragment
+import androidx.appcompat.app.AppCompatActivity
 import butterknife.ButterKnife
 import com.github.masterjey.simplenote.R
 import com.github.masterjey.simplenote.view.fragment.BaseFragment
@@ -16,6 +18,8 @@ import com.ncapdevi.fragnav.tabhistory.UniqueTabHistoryStrategy
 import io.github.inflationx.viewpump.ViewPumpContextWrapper
 
 class MainActivity : AppCompatActivity(), FragNavController.RootFragmentListener, BaseFragment.FragmentNavigation {
+    
+    // change
 
     private val savedNotesTab = FragNavController.TAB1
 
@@ -45,6 +49,8 @@ class MainActivity : AppCompatActivity(), FragNavController.RootFragmentListener
                     override fun switchTab(
                         index: Int,
                         transactionOptions: FragNavTransactionOptions?
+                            index: Int,
+                            transactionOptions: FragNavTransactionOptions?
                     ) {
                     }
                 })
@@ -66,7 +72,7 @@ class MainActivity : AppCompatActivity(), FragNavController.RootFragmentListener
     override val numberOfRootFragments: Int
         get() = 1
 
-    override fun getRootFragment(index: Int): Fragment {
+    override fun getRootFragment(index: Int): androidx.fragment.app.Fragment {
         when (index) {
             savedNotesTab -> return savedNotesFragment
         }

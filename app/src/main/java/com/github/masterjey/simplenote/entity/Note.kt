@@ -1,5 +1,8 @@
 package com.github.masterjey.simplenote.entity
 
+
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import android.os.Parcel
 import android.os.Parcelable
 import androidx.room.Entity

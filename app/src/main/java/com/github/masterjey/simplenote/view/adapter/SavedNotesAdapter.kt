@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.DiffUtil
 import butterknife.BindView
 import butterknife.ButterKnife
 import com.github.masterjey.simplenote.R
@@ -19,7 +20,7 @@ import java.util.*
 
 
 class SavedNotesAdapter(private val context: Context) :
-    RecyclerView.Adapter<SavedNotesAdapter.SavedNotesViewHolder>() {
+    androidx.recyclerview.widget.RecyclerView.Adapter<SavedNotesAdapter.SavedNotesViewHolder>() {
 
     private var onSavedNoteClickListener: OnSavedNoteClickListener? = null
 
@@ -52,11 +53,11 @@ class SavedNotesAdapter(private val context: Context) :
         this.onSavedNoteClickListener = onSavedNoteClickListener
     }
 
-    inner class SavedNotesViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),
+    inner class SavedNotesViewHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView),
         View.OnClickListener {
 
         @BindView(R.id.savedNotesItemRootLayout)
-        lateinit var rootLayout: CardView
+        lateinit var rootLayout: androidx.cardview.widget.CardView
         @BindView(R.id.savedNotesTitleNote)
         lateinit var titleTextView: TextView
         @BindView(R.id.savedNotesContentNote)

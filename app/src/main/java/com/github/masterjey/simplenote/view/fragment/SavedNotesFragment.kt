@@ -2,6 +2,14 @@ package com.github.masterjey.simplenote.view.fragment
 
 import android.os.Bundle
 import android.os.Handler
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
+import android.os.Bundle
+import android.os.Handler
+import com.google.android.material.appbar.AppBarLayout
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
@@ -34,7 +42,7 @@ class SavedNotesFragment : BaseFragment(), PopupMenu.OnMenuItemClickListener, Ob
     @BindView(R.id.savedNotesMoreAction)
     lateinit var moreAction: ImageView
     @BindView(R.id.savedNotesRecyclerView)
-    lateinit var recyclerView: RecyclerView
+    lateinit var recyclerView: androidx.recyclerview.widget.RecyclerView
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -66,8 +74,8 @@ class SavedNotesFragment : BaseFragment(), PopupMenu.OnMenuItemClickListener, Ob
             }
         })
         recyclerView.adapter = adapter
-        recyclerView.layoutManager = LinearLayoutManager(context)
-        recyclerView.itemAnimator = DefaultItemAnimator()
+        recyclerView.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(context)
+        recyclerView.itemAnimator = androidx.recyclerview.widget.DefaultItemAnimator()
     }
 
     override fun onChanged(notes: MutableList<Note>?) {
